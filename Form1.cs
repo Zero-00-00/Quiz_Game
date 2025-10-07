@@ -46,12 +46,18 @@ namespace Quiz_Game
                     FormQuiz quizForm = new FormQuiz(difficulty, selectedTopics, timed, neg_mark);
                     quizForm.Show();
                     this.Hide();
+                    quizForm.FormClosed += quizForm_FormClosed;
                 }
             }
             catch (System.NullReferenceException)
             {
                 label1.Text = "Please select at least one topic and a difficulty level.";
             }
+        }
+        private void quizForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+            //this.Close();
         }
     }
 }

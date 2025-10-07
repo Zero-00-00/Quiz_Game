@@ -30,9 +30,9 @@ namespace Quiz_Game
             if (difficulty == "Easy")
                 customTimer = 20;
             else if (difficulty == "Medium")
-                customTimer = 20;
+                customTimer = 15;
             else
-                customTimer = 20;
+                customTimer = 10;
 
             quizQuestions = allQuestions.Where(q => topics.Contains(q.Topic) && q.Difficulty == difficulty).ToList();
 
