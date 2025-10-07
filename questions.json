@@ -1,0 +1,16 @@
+[
+  {
+    "Topic": "Science",
+    "Difficulty": "Easy",
+    "Text": "What planet is known as the Red Planet?",
+    "Options": [ "Earth", "Mars", "Jupiter", "Venus" ],
+    "Answer": "Mars"
+  },
+  {
+    "Topic": "Math",
+    "Difficulty": "Medium",
+    "Text": "What is 12 × 8?",
+    "Options": [ "96", "108", "88", "112" ],
+    "Answer": "96"
+  }
+]
