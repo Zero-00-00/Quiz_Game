@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace QuizGame
+namespace Quiz_Game
 {
     public class Question
     {
