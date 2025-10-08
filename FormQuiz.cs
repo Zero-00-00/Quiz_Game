@@ -52,9 +52,7 @@ namespace Quiz_Game
         {
             if (currentIndex >= quizQuestions.Count)
             {
-                quizTimer.Stop();
-                MessageBox.Show($"Quiz Finished!\nYour Score: {score}/{quizQuestions.Count}");
-                this.Close();
+                result_box();
                 return;
             }
 
@@ -92,6 +90,18 @@ namespace Quiz_Game
 
             currentIndex++;
             LoadNextQuestion();
+        }
+
+        private void result_box()
+        {
+            quizTimer.Stop();
+            MessageBox.Show($"Quiz Finished!\nYour Score: {score}/{quizQuestions.Count}");
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            result_box();
         }
     }
 }
