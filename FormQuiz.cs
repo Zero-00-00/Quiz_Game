@@ -22,7 +22,7 @@ namespace Quiz_Game
         private int customTimer;
         private Timer quizTimer = new Timer();
 
-        public FormQuiz(string difficulty, List<string> topics, bool timer, bool neg_mark)
+        public FormQuiz(string difficulty, List<string> topics, bool timer, bool neg_mark, decimal questions, decimal customTime)
         {
             InitializeComponent();
             LoadQuestions();

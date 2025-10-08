@@ -23,10 +23,13 @@ namespace Quiz_Game
             try
             {
                 string difficulty = "";
+                decimal customTime = 0;
                 difficulty = comboBox1.SelectedItem.ToString();
+                decimal questions = numericUpDown1.Value;
                 bool timed = false, neg_mark = false;
 
                 if (checkBox4.Checked) timed = true;
+                if (radioButton1.Checked) customTime = numericUpDown2.Value;
                 if (checkBox5.Checked) neg_mark = true;
 
                 List<string> selectedTopics = new List<string>();
@@ -43,7 +46,7 @@ namespace Quiz_Game
                 }
                 else
                 {
-                    FormQuiz quizForm = new FormQuiz(difficulty, selectedTopics, timed, neg_mark);
+                    FormQuiz quizForm = new FormQuiz(difficulty, selectedTopics, timed, neg_mark, questions, customTime);
                     quizForm.Show();
                     this.Hide();
                     quizForm.FormClosed += quizForm_FormClosed;
@@ -58,6 +61,16 @@ namespace Quiz_Game
         {
             this.Show();
             //this.Close();
+        }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            radioButton1.Visible = true; 
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            numericUpDown2.Visible = true;
         }
     }
 }
