@@ -18,31 +18,26 @@ namespace Quiz_Game
         private List<Question> quizQuestions;
         private int currentIndex = 0;
         private int score = 0;
-        private int timeLeft;
-        private int customTimer;
+        private int timeLeft = 0, timeLeft_pq;
         private Timer quizTimer = new Timer();
+        private bool timer, neg_mark;
+        private int ques;
 
-        public FormQuiz(string difficulty, List<string> topics, bool timer, bool neg_mark, decimal questions, decimal customTime)
+        public FormQuiz(string difficulty, List<string> topics, bool timed, bool neg_markd, decimal questions, decimal customTime)
         {
             InitializeComponent();
             LoadQuestions();
+            timer = timed; neg_mark = neg_markd;
+            ques = (int)questions;
 
-            if (difficulty == "Easy")
-                customTimer = 20;
-            else if (difficulty == "Hard")
-                customTimer = 10;
-            else
-                customTimer = 15;
+            if (timer) time(customTime, difficulty);
 
             if (difficulty == "All")
                 quizQuestions = allQuestions.Where(q => topics.Contains(q.Topic)).ToList();
             else
                 quizQuestions = allQuestions.Where(q => topics.Contains(q.Topic) && q.Difficulty == difficulty).ToList();
 
-            timeLeft = customTimer;
-            quizTimer.Interval = 1000;
-            quizTimer.Tick += QuizTimer_Tick;
-
+            if (quizQuestions.Count < ques) ques = quizQuestions.Count;
             LoadNextQuestion();
         }
         private void LoadQuestions()
@@ -67,11 +62,13 @@ namespace Quiz_Game
 
         private void LoadNextQuestion()
         {
-            if (currentIndex >= quizQuestions.Count)
+            if (currentIndex == (ques))
             {
                 result_box();
                 return;
             }
+
+            label4.Text = $"Q {currentIndex + 1} / {ques}";
 
             var q = quizQuestions[currentIndex];
             label1.Text = q.Text;
@@ -80,20 +77,28 @@ namespace Quiz_Game
             button3.Text = q.Options[2];
             button4.Text = q.Options[3];
 
-            timeLeft = customTimer;
-            label3.Text = timeLeft.ToString();
-            quizTimer.Start();
+            if (timer)
+            {
+                label2.Visible = true;
+                label3.Visible = true;
+                timeLeft_pq = timeLeft;
+                label3.Text = timeLeft_pq.ToString();
+                quizTimer.Start();
+            }
         }
 
         private void QuizTimer_Tick(object sender, EventArgs e)
         {
-            timeLeft--;
-            label3.Text = timeLeft.ToString();
-            if (timeLeft <= 0)
+            if (timer)
             {
-                quizTimer.Stop();
-                currentIndex++;
-                LoadNextQuestion();
+                timeLeft_pq--;
+                label3.Text = timeLeft_pq.ToString();
+                if (timeLeft_pq <= 0)
+                {
+                    quizTimer.Stop();
+                    currentIndex++;
+                    LoadNextQuestion();
+                }
             }
         }
 
@@ -102,8 +107,8 @@ namespace Quiz_Game
             Button btn = sender as Button;
             var correctAnswer = quizQuestions[currentIndex].Answer;
 
-            if (btn.Text == correctAnswer)
-                score++;
+            if (btn.Text != correctAnswer && neg_mark) score--;
+            if (btn.Text == correctAnswer) score++;
 
             currentIndex++;
             LoadNextQuestion();
@@ -112,13 +117,34 @@ namespace Quiz_Game
         private void result_box()
         {
             quizTimer.Stop();
-            MessageBox.Show($"Quiz Finished!\nYour Score: {score}/{quizQuestions.Count}");
+            MessageBox.Show($"Quiz Finished!\nYour Score: {score}/{ques}");
             this.Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             result_box();
+        }
+
+        private void time(decimal customTime, string difficulty)
+        {
+
+            quizTimer.Interval = 1000;
+            quizTimer.Tick += QuizTimer_Tick;
+
+            if (customTime == 0)
+            {
+                if (difficulty == "Easy")
+                    timeLeft = 20;
+                else if (difficulty == "Hard")
+                    timeLeft = 10;
+                else
+                    timeLeft = 15;
+            }
+            else 
+            { 
+                timeLeft = (int)customTime;
+            }
         }
     }
 }
