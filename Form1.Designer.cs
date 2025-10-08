@@ -171,7 +171,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Easy",
-            "Medium ",
+            "Medium",
             "Hard"});
             this.comboBox1.Location = new System.Drawing.Point(506, 567);
             this.comboBox1.Name = "comboBox1";
