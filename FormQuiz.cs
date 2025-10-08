@@ -37,7 +37,16 @@ namespace Quiz_Game
             else
                 quizQuestions = allQuestions.Where(q => topics.Contains(q.Topic) && q.Difficulty == difficulty).ToList();
 
-            if (quizQuestions.Count < ques) ques = quizQuestions.Count;
+            if (quizQuestions.Count < ques)
+            {
+                DialogResult result = MessageBox.Show($"Sorry! But we fewer questions than selected {quizQuestions.Count}/{ques}", "Fewer Questions!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.Cancel) 
+                {
+                    Application.Restart();
+                    return;
+                }
+                ques = quizQuestions.Count;
+            }
             LoadNextQuestion();
         }
         private void LoadQuestions()
