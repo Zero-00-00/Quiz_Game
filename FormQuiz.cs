@@ -46,6 +46,20 @@ namespace Quiz_Game
         {
             string json = File.ReadAllText("questions.json");
             allQuestions = JsonConvert.DeserializeObject<List<Question>>(json);
+
+            Shuffle(allQuestions); // Shuffle after loading
+        }
+
+        private void Shuffle<T>(List<T> list)
+        {
+            Random rng = new Random();
+            int n = list.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                (list[k], list[n]) = (list[n], list[k]); // Swap
+            }
         }
 
         private void LoadNextQuestion()
