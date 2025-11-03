@@ -13,6 +13,7 @@ namespace Quiz_Game
 {
     public partial class Form1 : Form
     {
+        bool will_check = true;
         public Form1()
         {
             InitializeComponent();
@@ -24,7 +25,15 @@ namespace Quiz_Game
             {
                 string difficulty = "";
                 decimal customTime = 0;
-                difficulty = comboBox1.SelectedItem.ToString();
+                if (comboBox1.SelectedItem != null)
+                {
+                    difficulty = comboBox1.SelectedItem.ToString();
+                }
+                else
+                {
+                    label1.Text = "Please select at least one topic and a difficulty level";
+                    return; // stop execution
+                }
                 decimal questions = numericUpDown1.Value;
                 bool timed = false, neg_mark = false;
 
@@ -65,12 +74,32 @@ namespace Quiz_Game
 
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
-            radioButton1.Visible = true; 
+            if (radioButton1.Visible)
+                radioButton1.Visible = false;
+            else
+                radioButton1.Visible = true;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            numericUpDown2.Visible = true;
+            if (numericUpDown2.Visible)
+                numericUpDown2.Visible = false;
+            else
+                numericUpDown2.Visible = true;
+        }
+
+        private void radioButton1_Click(object sender, EventArgs e)
+        {
+            if (will_check)
+            {
+                radioButton1.Checked = false;
+                will_check = false;
+            }
+            else
+            {
+                radioButton1.Checked = true;
+                will_check = true;
+            }
         }
     }
 }

@@ -239,16 +239,16 @@
             this.radioButton1.BackColor = System.Drawing.Color.Transparent;
             this.radioButton1.Font = new System.Drawing.Font("Wide Latin", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.ForeColor = System.Drawing.SystemColors.Control;
-            this.radioButton1.Location = new System.Drawing.Point(149, 571);
+            this.radioButton1.Location = new System.Drawing.Point(154, 571);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.radioButton1.Size = new System.Drawing.Size(114, 20);
             this.radioButton1.TabIndex = 13;
-            this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Custom";
             this.radioButton1.UseVisualStyleBackColor = false;
             this.radioButton1.Visible = false;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioButton1.Click += new System.EventHandler(this.radioButton1_Click);
             // 
             // numericUpDown2
             // 
@@ -282,8 +282,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(722, 650);
-            this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label1);
