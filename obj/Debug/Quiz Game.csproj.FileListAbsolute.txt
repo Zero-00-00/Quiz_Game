@@ -1,0 +1,16 @@
+D:\Quiz_Game-master\bin\Debug\questions.json
+D:\Quiz_Game-master\bin\Debug\Quiz Game.exe.config
+D:\Quiz_Game-master\bin\Debug\Quiz Game.exe
+D:\Quiz_Game-master\bin\Debug\Quiz Game.pdb
+D:\Quiz_Game-master\bin\Debug\Newtonsoft.Json.dll
+D:\Quiz_Game-master\bin\Debug\Newtonsoft.Json.xml
+D:\Quiz_Game-master\obj\Debug\Quiz Game.csproj.AssemblyReference.cache
+D:\Quiz_Game-master\obj\Debug\Quiz_Game.Form1.resources
+D:\Quiz_Game-master\obj\Debug\Quiz_Game.Quiz.resources
+D:\Quiz_Game-master\obj\Debug\Quiz_Game.Properties.Resources.resources
+D:\Quiz_Game-master\obj\Debug\Quiz Game.csproj.GenerateResource.cache
+D:\Quiz_Game-master\obj\Debug\Quiz Game.csproj.CoreCompileInputs.cache
+D:\Quiz_Game-master\obj\Debug\Quiz Game.csproj.Up2Date
+D:\Quiz_Game-master\obj\Debug\Quiz Game.exe
+D:\Quiz_Game-master\obj\Debug\Quiz Game.pdb
+D:\Quiz_Game-master\obj\Debug\Quiz Game.exe.config
