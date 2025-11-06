@@ -14,3 +14,19 @@ D:\Quiz_Game-master\obj\Debug\Quiz Game.csproj.Up2Date
 D:\Quiz_Game-master\obj\Debug\Quiz Game.exe
 D:\Quiz_Game-master\obj\Debug\Quiz Game.pdb
 D:\Quiz_Game-master\obj\Debug\Quiz Game.exe.config
+C:\Users\pralo\source\repos\Quiz Game\bin\Debug\questions.json
+C:\Users\pralo\source\repos\Quiz Game\bin\Debug\Quiz Game.exe.config
+C:\Users\pralo\source\repos\Quiz Game\bin\Debug\Quiz Game.exe
+C:\Users\pralo\source\repos\Quiz Game\bin\Debug\Quiz Game.pdb
+C:\Users\pralo\source\repos\Quiz Game\bin\Debug\Newtonsoft.Json.dll
+C:\Users\pralo\source\repos\Quiz Game\bin\Debug\Newtonsoft.Json.xml
+C:\Users\pralo\source\repos\Quiz Game\obj\Debug\Quiz Game.csproj.AssemblyReference.cache
+C:\Users\pralo\source\repos\Quiz Game\obj\Debug\Quiz Game.exe.config
+C:\Users\pralo\source\repos\Quiz Game\obj\Debug\Quiz_Game.Form1.resources
+C:\Users\pralo\source\repos\Quiz Game\obj\Debug\Quiz_Game.Quiz.resources
+C:\Users\pralo\source\repos\Quiz Game\obj\Debug\Quiz_Game.Properties.Resources.resources
+C:\Users\pralo\source\repos\Quiz Game\obj\Debug\Quiz Game.csproj.GenerateResource.cache
+C:\Users\pralo\source\repos\Quiz Game\obj\Debug\Quiz Game.csproj.CoreCompileInputs.cache
+C:\Users\pralo\source\repos\Quiz Game\obj\Debug\Quiz Game.csproj.Up2Date
+C:\Users\pralo\source\repos\Quiz Game\obj\Debug\Quiz Game.exe
+C:\Users\pralo\source\repos\Quiz Game\obj\Debug\Quiz Game.pdb

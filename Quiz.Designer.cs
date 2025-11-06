@@ -147,7 +147,7 @@
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
             this.button5.Location = new System.Drawing.Point(562, 81);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(85, 29);
+            this.button5.Size = new System.Drawing.Size(106, 29);
             this.button5.TabIndex = 7;
             this.button5.Text = "Finalize";
             this.button5.UseVisualStyleBackColor = false;
@@ -160,7 +160,7 @@
             this.label4.Cursor = System.Windows.Forms.Cursors.PanSW;
             this.label4.Font = new System.Drawing.Font("MV Boli", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
-            this.label4.Location = new System.Drawing.Point(71, 165);
+            this.label4.Location = new System.Drawing.Point(71, 118);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 22);
             this.label4.TabIndex = 8;

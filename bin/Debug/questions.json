@@ -74,7 +74,7 @@
       "Topic": "Science",
       "Difficulty": "Medium",
       "Text": "What gas do plants absorb?",
-      "Options": [ "Oxygen", "Carbon Dioxide", "Nitrogen", "Helium" ],
+      "Options": [ "Oxygen", "CO2", "Nitrogen", "Helium" ],
       "Answer": "Carbon Dioxide"
     },
     {
@@ -541,7 +541,7 @@
     {
       "Topic": "Reason",
       "Difficulty": "Hard",
-      "Text": "Opposite of 2 in a cube is 5. Opposite of 3 is 6. What is opposite of 1?",
+      "Text": "Opposite of 2 in a cube is 5. Opposite \nof 3 is 6. What is opposite of 1?",
       "Options": [ "2", "3", "4", "5" ],
       "Answer": "4"
     },

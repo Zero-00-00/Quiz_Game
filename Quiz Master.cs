@@ -107,5 +107,11 @@ namespace Quiz_Game
         {
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // help button
+            MessageBox.Show("Quiz Master Help:\n\n1. Select at least one topic from the checkboxes.\n2. Choose a difficulty level from the dropdown menu.\n3. (Optional) Set the number of questions using the numeric up-down control.\n4. (Optional) Enable timed mode and set a custom time per question.\n5. (Optional) Enable negative marking for incorrect answers or unattempted questions.\n6. You can end the quiz at any point by clicking the finalize button.\n7. Click 'Start Quiz' to begin!\n\nGood luck!", "Help - Quiz Master", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

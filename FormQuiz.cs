@@ -16,6 +16,7 @@ namespace Quiz_Game
     {
         private List<Question> allQuestions;
         private List<Question> quizQuestions;
+        private List<option> options = [0, 1, 2, 3];
         private int currentIndex = 0;
         private int score = 0;
         private int timeLeft = 0, timeLeft_pq;
@@ -81,10 +82,11 @@ namespace Quiz_Game
 
             var q = quizQuestions[currentIndex];
             label1.Text = q.Text;
-            button1.Text = q.Options[0];
-            button2.Text = q.Options[1];
-            button3.Text = q.Options[2];
-            button4.Text = q.Options[3];
+            Shuffle(options);
+            button1.Text = q.Options[options[0]];
+            button2.Text = q.Options[options[1]];
+            button3.Text = q.Options[options[2]];
+            button4.Text = q.Options[options[3]];
 
             if (timer)
             {
@@ -126,7 +128,29 @@ namespace Quiz_Game
         private void result_box()
         {
             quizTimer.Stop();
-            MessageBox.Show($"Quiz Finished!\nYour Score: {score}/{ques}");
+
+            DialogResult result = MessageBox.Show(
+                $"Quiz Finished!\nYour Score: {score}/{ques}\n\nDo you want to review your answers?",
+                "Quiz Finished",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Information
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                StringBuilder review = new StringBuilder();
+                for (int i = 0; i < quizQuestions.Count && i < userAnswers.Count; i++)
+                {
+                    var q = quizQuestions[i];
+                    review.AppendLine($"Q{i + 1}: {q.Text}");
+                    review.AppendLine($"   Your Answer: {userAnswers[i]}");
+                    review.AppendLine($"   Correct Answer: {q.Answer}");
+                    review.AppendLine();
+                }
+
+                MessageBox.Show(review.ToString(), "Quiz Review", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
             this.Close();
         }
 
